@@ -1,15 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
 function App() {
   return (
     <div className="container">
+      <h1>Search for your favorite Books</h1>
       <form>
         <div class="form-group">
-          <input type="text" className="input-control" placeholder="Search for books" autoComplete="off" />
+          <input type="text" className="form-control mt-10" placeholder="Search for books" autoComplete="off" />
         </div>
+        <button type="submit" className="btn btn-danger">Search</button>
       </form>
     </div>
   );
