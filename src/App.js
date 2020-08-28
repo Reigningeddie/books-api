@@ -7,7 +7,7 @@ function App() {
 
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
-  const [apiKey] = useState("AIzaSyD7qlJTDVADKE8NBVQ81Cv7LkVyobbgT3U");
+  const [apiKey] = useState(process.env.apiKey);
 
   function handleChange(event) {
     const book = event.target.value;
