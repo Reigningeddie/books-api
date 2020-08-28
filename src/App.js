@@ -7,7 +7,7 @@ function App() {
 
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
-  const [apiKey, setApiKey] = useState("AIzaSyD7qlJTDVADKE8NBVQ81Cv7LkVyobbgT3U");
+  const [apiKey] = useState("AIzaSyD7qlJTDVADKE8NBVQ81Cv7LkVyobbgT3U");
 
   function handleChange(event) {
     const book = event.target.value;
@@ -34,7 +34,9 @@ function App() {
       </form>
 
       {result.map(book => (
+        <a target="_blank" href={book.volumeInfo.previewLink}>
         <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/>
+        </a>
       ))}
     </div>
   );
