@@ -16,9 +16,10 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+apiKey+"&maxResults=15")
+    axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+apiKey+"&maxResults=25")
     .then(data => {
-      console.log(data);
+      console.log(data.data.items);
+      setResult(data.data.items);
     })
   }
 
@@ -31,6 +32,10 @@ function App() {
         </div>
         <button type="submit" className="btn btn-danger">Search</button>
       </form>
+
+      {result.map(book => (
+        <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/>
+      ))}
     </div>
   );
 }
