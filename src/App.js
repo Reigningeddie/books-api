@@ -3,11 +3,11 @@ import './App.css';
 import axios from 'axios';
 
 
-function App() {
 
+function App() {
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
-  const [apiKey] = useState(process.env.apiKey);
+  const [apiKey] = useState(process.env.REACT_APP_API_KEY);
 
   function handleChange(event) {
     const book = event.target.value;
@@ -36,6 +36,7 @@ function App() {
       {result.map(book => (
         <a target="_blank" rel="noopener noreferrer" href={book.volumeInfo.previewLink}>
         <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/>
+        <button type="submit" className="btn btn-danger">Save</button>
         </a>
       ))}
     </div>
